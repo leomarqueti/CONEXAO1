@@ -13,7 +13,7 @@ var dadosUsuario = {
 
 function pegarDados(){
     // Iniciar a conexão WebSocket
-    const socket = new WebSocket('https://leomarqueti.github.io/CONEXAO2/');
+    const socket = new WebSocket('ws://leomarqueti.github.io/CONEXAO2/');
 
     // Enviar dados quando a conexão for estabelecida
     socket.onopen = function() {
