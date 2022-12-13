@@ -1,0 +1,71 @@
+  <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Primeira página */
+
+        .container {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        }
+
+        .input-field {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        }
+
+        .botao {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Primeira página -->
+    <div class="container">
+        <h1>Informações de usuário</h1>
+        <input type="text" class="input-field" id="inputNome" placeholder="Nome" />
+        <input type="email" class="input-field" id="inputEmail" placeholder="Email" />
+        <button class="botao" onclick="pegarDados()">Enviar</button>
+    </div>
+</body>
+<script>
+    // Primeira página
+
+    var nome = document.getElementById("inputNome").value; // pego o valor do input de nome
+
+    var email = document.getElementById("inputEmail").value; // pego o valor do input de email
+
+    // Armazeno as informações em um objeto
+    var dadosUsuario = {
+        nome: nome,
+        email: email
+    };
+
+    
+    function pegarDados(){
+        // Iniciar a conexão WebSocket
+        const socket = new WebSocket('ws://localhost:8080');
+
+        // Enviar dados quando a conexão for estabelecida
+        socket.onopen = function() {
+        socket.send('Nome do cliente: João da Silva');
+        socket.send('Veículo: Ford Fusion');
+        };
+
+    }
+    
+
+</script>
+</html>
