@@ -6,7 +6,7 @@ var email = document.getElementById("inputEmail").value; // pego o valor do inpu
 
 // Armazeno as informações em um objeto
 var dadosUsuario = {
-    nome: nome,
+    nome: "leo",
     email: email
 };
 
