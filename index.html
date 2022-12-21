@@ -52,7 +52,7 @@
     const veiculo = form.querySelector('#veiculo').value;
 
     // Envia os dados para a segunda página usando um POST
-    fetch('/segunda-pagina', {
+    fetch('https://leomarqueti.github.io/CONEXAO2/', {
         method: 'POST',
         body: JSON.stringify({ nomeCliente, veiculo }),
         headers: { 'Content-Type': 'application/json' },
